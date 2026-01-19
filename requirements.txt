@@ -17,10 +17,10 @@ Pillow==10.2.0
 pytorchvideo==0.1.5
 PyYAML==6.0.2
 regex==2024.7.24
-scipy==1.14.2
+scipy==1.14.1
 timm==1.0.8
-torch==2.1.2
-torchaudio==2.1.2
-torchvision==0.17.1+cu121
+torch==2.4.1
+torchaudio==2.4.1
+torchvision==0.19.1+cu121
 transformers==4.42.0
 tensorboard==2.17.1

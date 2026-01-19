@@ -1,0 +1,51 @@
+paths:
+  hf_cache: "./weights"
+  model_base: "./pretrain_ckpt/vicuna-7b-v1.5"
+  model_name: "nextgpt-v1.5-7b"
+  model_path: "./checkpoints/nextgpt-v1.5-7b"
+  image: null
+
+device:
+  device: "cuda"
+  device_map: "auto"
+  use_flash_attn: false
+  load_8bit: false
+  load_4bit: false
+
+generation:
+  top_k: 1
+  top_p: 1.0
+  temperature: 0.2
+  max_new_tokens: 512
+  do_sample: true
+  use_cache: false
+  output_hidden_states: true
+  guidance_scale_for_img: 7.5
+  num_inference_steps_for_img: 50
+  guidance_scale_for_vid: 7.5
+  num_inference_steps_for_vid: 50
+  height: 320
+  width: 576
+  num_frames: 16
+  guidance_scale_for_aud: 7.5
+  num_inference_steps_for_aud: 50
+  audio_length_in_s: 5.0
+
+prompt:
+  conv_mode: "llava_v1"
+  stop_token_ids:
+    - 835
+
+output:
+  assets_dir: "./assets"
+  save_images: true
+  save_videos: true
+  save_audios: true
+
+optimization:
+  lazy_decoder_load: true
+  decoder_device: "cuda:1"
+  decoder_dtype: "float16"
+  decoder_offload: "none"
+  decoder_attention_slicing: true
+  decoder_xformers: false
